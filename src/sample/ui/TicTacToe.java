@@ -32,7 +32,7 @@ public class TicTacToe extends Application {
     @Override
     public void start(Stage primaryStage) {
         Button restart = new Button();
-        Image img = new Image("file:ng.jpg", 100,30, false, false);
+        Image img = new Image("file:images/ng.jpg", 100,30, false, false);
         ImageView view = new ImageView(img);
         restart.setGraphic(view);
         restart.setOnAction(new ButtonClickHandler());
@@ -55,7 +55,7 @@ public class TicTacToe extends Application {
     public void setGridpane() {
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
-                Image blank = new Image("file:blankBox.png");
+                Image blank = new Image("file:images/blankBox.png");
                 ImageView imgView = new ImageView(blank);
                 imgView.setFitHeight(100);
                 imgView.setFitWidth(100);
@@ -93,7 +93,7 @@ public class TicTacToe extends Application {
                 if(arr[row][col] != 0) { // nothing happens if space is occupied
                     return;
                 }
-                ((ImageView) mouseEvent.getSource()).setImage(new Image("file:x.png"));
+                ((ImageView) mouseEvent.getSource()).setImage(new Image("file:images/x.png"));
                 arr[row][col] = 1;
                 checkWinner();
             }
@@ -101,7 +101,7 @@ public class TicTacToe extends Application {
                 if(arr[row][col] != 0) {
                     return;
                 }
-                Image yImg = new Image("file:o.png");
+                Image yImg = new Image("file:images/o.png");
                 ((ImageView) mouseEvent.getSource()).setImage(yImg);
                 arr[row][col] = 2;
                 checkWinner();
